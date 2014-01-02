@@ -11,6 +11,7 @@ Note:
 Could you optimize your algorithm to use only O(k) extra space?
  *
  */
+// O(K) + O(K)
 function pascalsTrangle(row) {
     // set row = row + 1, thr row number starts from 0.
     var row = row + 1, result = [1];
