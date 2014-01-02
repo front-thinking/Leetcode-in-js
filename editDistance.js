@@ -1,5 +1,5 @@
 //@ sourceURL=halfNum.js
-// DP for editDistance.
+// DP for editDistance between strings.
 var editDistance = function(a, b) {
     var d = [];
     for (var i = 0, leni = a.length; i <= leni; ++i) {

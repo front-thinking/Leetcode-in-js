@@ -1,6 +1,6 @@
 //@ sourceURL=sort.js
 // for max num smaller than 100,000;
-// Bigger size issue : multi array with offset.
+// Bigger size solution : multi array with offset.
 var sort = function(arr) {
     var obj = new Array(Math.max.apply({}, arr)), i, j, num, len;
     for (i = 0, len = arr.length; i < len; ++i) {
