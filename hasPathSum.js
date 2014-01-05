@@ -1,4 +1,4 @@
-//@ sourceURL=halfNum.js
+ 
 /**
  *
  * @see http://oj.leetcode.com/problems/path-sum/
