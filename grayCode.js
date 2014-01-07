@@ -21,19 +21,26 @@ For now, the judge is able to judge based on one instance of gray code sequence.
  */
 var grayCode = function(n) {
     if (n <= 0) return [];
-    // [0,1] -> [0 + (0,1)].concat(1 + (0,1).reverse())
-    // 0 + (0,1) -> 00, 01
     var rlt = [0,1], rlt2, n = n - 1;
     for (var i = 0; i < n; ++i) {
         // rlt2 is written into result as a reverse.
         rlt2 = rlt.concat();
         for (var j = 0, len = rlt.length; j < len; ++j) {
-            rlt[j] = "0" + rlt[j];
-            rlt[len * 2 - j - 1] = "1" + rlt2[j];
+            rlt[j] = parseInt("0" + rlt[j], 2);
+            rlt[len * 2 - j - 1] = parseInt("1" + rlt2[j], 2);
         }
-    }
-    for (var i = 0, len = rlt.length; i < len; ++i) {
-        rlt[i] = parseInt(rlt[i],2);
     }
     return rlt;
 }
+
+// here comes another genius version... But not from me.
+/**
+ *
+var grayCode = function (n) {
+    var ret = [];
+    var size = 1 << n;
+    for(var i = 0; i < size; ++i)
+        ret.push((i >> 1)^i);
+    return ret;
+}
+ */
