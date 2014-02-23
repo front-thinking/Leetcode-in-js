@@ -7,7 +7,7 @@ Reverse a string word by word and there may be multiple whitespace between two w
 var reverseSen = function(str) {
     
     // for no-space required case:
-    // return str.split(/\s+/).reverse().join("");
+    // return str.split(/\s+/).reverse().join(" ");
     
     var matchs = str.match(/\s+/g).reverse(),
         words = str.split(/\s+/g).reverse();
@@ -24,5 +24,8 @@ var reverseSen = function(str) {
  * reverse all words in a sentence, but keep their positions. Also the spaces kept.
  */
 var reverseWord = function(str) {
+    
+    // for no-space required case:
+    // return ([].slice.call(str)).reverse().join("").split(/\s+/).reverse().join(" ");
     return reverseSen(([].slice.call(str)).reverse().join(""));
 }
