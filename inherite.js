@@ -51,8 +51,8 @@ var extend = function(superClass, subClass) {
     var newChild = function() {
         var _super = {};
         
+        // is this essencial?
         superClass.apply(this, arguments);
-        arguments.callee.prototype = this;
         for (var i in this) {
             Object.defineProperty(_super, i, {
                 writable : false,
@@ -70,13 +70,13 @@ var extend = function(superClass, subClass) {
             },
             set : function() {
                 return false;
-            },
-            configurable : true
+            }
         });
         //~ this._super = _super;
         subClass.apply(this, arguments);
     }
     newChild.prototype = new superClass();
+    newChild.prototype.constructor = newChild;
     if (!newChild.prototype instanceof superClass) {
         // no non-param constructor in super class.
         //~ return false;
