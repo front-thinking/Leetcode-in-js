@@ -13,7 +13,7 @@ var Animal = function(){
 };
 
 var Dog = function() {
-    var _super = {},
+    var _super = this._super = {},
         // private attrs
         leg = "dog";
     
@@ -43,3 +43,4 @@ Dog.prototype.constructor = Dog;
 // puppy instanceof Animal.
 var puppy = new Dog();
 puppy.run();
+puppy._super.run();
