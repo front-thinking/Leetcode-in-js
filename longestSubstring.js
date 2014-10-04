@@ -11,6 +11,9 @@ var longestSubstring = function(str) {
         curChar,
         curRecord = "";
     
+    // Based on a simple rule:
+    // Before we find a dulplicated charactor, the substring recorded by now must be one without a dulplicated chars.
+    // The new calculation should starts from the first place where the dulplicated char appears.
     for (var i = 0, len = str.length; i < len; ++i) {
         curChar = str.charAt(i);
         if (!curRecord.match(curChar)) {

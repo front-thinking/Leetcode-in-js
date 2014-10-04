@@ -35,7 +35,7 @@ var minWindow = function(pres, s) {
         if (preIndexed[c]) {
             // always update the last index found.
             matched[preIndexed[c] - 1] = i + 1;
-            // found all.
+            // all found, check the length.
             if (matched.length == pres.length && !matched.join(",").match(/(^0,|,0,|,0$)/)) {
                 newStart = Math.min.apply(Math, matched) - 1;
                 newLen = Math.max.apply(Math, matched) - newStart - 1;
