@@ -1,9 +1,25 @@
-// @ sourceURL=minSubContain.js
+// @ sourceURL=minWindow.js
 /**
  * js的最短摘要问题O(n*m)解法。其中m来自pres的join和match。
- * Find the shortest substring of s that containing all charactors in a given charset pres.
+ * 妈的竟然之前已经做过一次了。。。。。。
+ *
+Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+
+For example,
+S = "ADOBECODEBANC"
+T = "ABC"
+
+Minimum window is "BANC".
+
+Note:
+If there is no such window in S that covers all characters in T, return the emtpy string "".
+
+If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
+ *
+ *@see https://oj.leetcode.com/problems/minimum-window-substring/
+ *
  */
-var minSubContain = function(pres, s) {
+var minWindow = function(pres, s) {
     var matched = [],
         preIndexed = {},
         i, c,
