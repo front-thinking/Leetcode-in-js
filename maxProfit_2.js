@@ -1,4 +1,4 @@
-//@ sourceURL=maxProfit.js
+//@ sourceURL=maxProfit_2.js
 
 /**
  * Best time to buy and sell stock II. 
@@ -9,7 +9,7 @@
  *
  *@see https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
  */
-var maxProfit = function(arr) {
+var maxProfit_2 = function(arr) {
     var buyIndex = 0,
         sellIndex = 0,
         lastIndex = 0,
