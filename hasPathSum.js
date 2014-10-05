@@ -1,4 +1,4 @@
- 
+//@ sourceURL=hasPathSum .js
 /**
  *
  * @see http://oj.leetcode.com/problems/path-sum/
