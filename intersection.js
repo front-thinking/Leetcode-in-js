@@ -19,17 +19,19 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  *
  *
  *
- * triple inverse solution:
+ * There is obviously another easier solution than triple-reverse, however I prefer this one as it practises my skills on handling a linkedlist with javascript.
+ *
+ * triple inverse solution with O(n) and O(C):
  
     inverse s1, got it's end as e1, got it's count as C1;
-    test s2: if there exist a intersection, then the end of s2 should be s1. Then:
+    test s2: if there exist a intersection, the end of s2 should be s1. Then:
         inverse s2, got it's count as C2;
         inverse e, got it's count as C3, meanwhile all list are just like it is before;
-        set the index of the intersection at s1 x, at s2 y, at s3 z, then:
+        set the index of the intersection at s1 x, at s2 y, at s3 z, then we get:
             x + y = C1;
             x + z = C2;
-            y + z = C3.
-        get x, y, z, find the index;
+            y + z = C3;
+        calculate x, y, z, find the index;
         return the node;
     otherwise:
         inverse e to change s1 back;
@@ -124,7 +126,6 @@ var inverse = function(s) {
 
 getIntersectionNode = function(s1, s2) {
     
-    // inversice the whole s1
     var c1, c2, c3,
         inversed,
         // end node of s1.
@@ -133,6 +134,7 @@ getIntersectionNode = function(s1, s2) {
         intIndex,
         pointer;
     
+    // inverse the s1 and get the information we need.
     inversed = inverse(s1);
     c1 = inversed.count;
     e1 = inversed.end;
