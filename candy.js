@@ -30,7 +30,7 @@ What is the minimum candies you must give?
         1 - 2 means the least candy should be 1 while that guy is having 2 at the end of the the sequence. Hand it out.
     For the second reducing sequence <2,1,0>, let's simply change it to <3,2,1>. We got 3 * [1 - (0)] + 16 = 19 as totalCandies;
         So at last every child at the end of a reducing sequence is having 1 candy.
-    The candy array was changed to 1,2,3,<4,2,1>,<3,2,1> at last.
+    The candy array was changed to 1,2,3,<4,2,1>,<3,2,1> in the end.
     Return 19 as the result.
  *
  */
