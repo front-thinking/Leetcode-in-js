@@ -20,6 +20,7 @@ If there are multiple such windows, you are guaranteed that there will always be
  *
  */
 var minWindow = function(pres, s) {
+    // record the appearing index of found chars, so we can get the start index and the length of substring of the window.
     var matched = [],
         preIndexed = {},
         i, c,
@@ -34,9 +35,16 @@ var minWindow = function(pres, s) {
     for (i = 0, c; c = s[i]; ++i) {
         if (preIndexed[c]) {
             // always update the last index found.
+            
+            // preIndexed[c] - 1 makes sure the index of matched starts from 0;
+            // ignore dulplicated chars found if we treat matched as an object-like thing.
+            
             matched[preIndexed[c] - 1] = i + 1;
             // all found, check the length.
-            if (matched.length == pres.length && !matched.join(",").match(/(^0,|,0,|,0$)/)) {
+            
+            // Telling the truth I can't understand what's the regexp used for after few months.
+            //~ if (matched.length == pres.length && !matched.join(",").match(/(^0,|,0,|,0$)/)) {
+            if (matched.length == pres.length) {
                 newStart = Math.min.apply(Math, matched) - 1;
                 newLen = Math.max.apply(Math, matched) - newStart - 1;
                 if (newLen <= minLen) {
@@ -46,5 +54,6 @@ var minWindow = function(pres, s) {
             }
         }
     }
+    if (!newLen) return "";
     return s.substr(minStart, minLen + 1);
 }
