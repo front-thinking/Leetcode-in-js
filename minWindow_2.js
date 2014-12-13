@@ -1,4 +1,4 @@
-// @ sourceURL=minWindow.js
+//@ sourceURL=minWindow.js
 /**
  * js的最短摘要问题O(n*m)解法。其中m来自pres的join和match。
  * 妈的竟然之前已经做过一次了。。。。。。
