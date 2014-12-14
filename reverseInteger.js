@@ -11,7 +11,7 @@ Example2: x = -123, return -321
  *
  */
 var reverseInteger = function(value) {
-    var bufStr = value.toString()
+    var bufStr = value.toString(),
         symbol = bufStr.match(/^-/);
     symbol = symbol || "";
     return +(symbol + bufStr.replace(/\D/, "").split("").reverse().join(""));
