@@ -11,23 +11,26 @@ var stackToQueue = function() {
         pushStack = [],
         popStack = [];
     
-    self.push = function() {
-        pushStack.push();
-    }
-    
-    self.pop = function() {
-        if (popStack.length) {
-            return popStack.pop();
-        } else {
+    var checkPopStack = function() {
+        if (!popStack.length) {
             for (var i = 0, len = pushStack.length; i < len; ++i) {
                 popStack.push(pushStack.pop());
             }
-            return popStack.pop();
         }
+    };
+    
+    self.push = function(elem) {
+        return pushStack.push(elem);
+    }
+    
+    self.pop = function() {
+        checkPopStack();
+        return popStack.pop();
     }
     
     self.top = function() {
-        return popStack.top();
+        checkPopStack();
+        return popStack[popStack.length - 1];
     }
     
     self.getLength = function() {
