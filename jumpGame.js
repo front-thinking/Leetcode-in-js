@@ -18,7 +18,7 @@ A = [3,2,1,0,4], return false.
  * ideas:
 
 Basically, if we can jump to node i + 1, it's obvious that we can reach node i.
-So if we figure it out that we can reach i and we can reach i + 1 from i, then we can reach i + i;
+And if we figure it out that we can reach i and we can reach i + 1 from i, then we can reach i + i;
 
 We scan from the bottom of the array and try to find the first node K that can reach the end.
 If any node in front can reach K, it can reach the end as well.
