@@ -11,7 +11,7 @@ How many possible unique paths are there?
  *
  *** ideas:
  
- 1. paths(row, column) is having the same result as paths(column, row);
+ 1. paths(row, column) is having the same result with paths(column, row);
  2. when row == 2 and column >= 2, the robot can turn down at (0, 1, ... column - 1) places and then go right to reach the target.
  3. if a robot is about to go (x, y), he must reach (x - 1, y) or (x, y - 1) first, and then reach target with 1 unique path.
  
