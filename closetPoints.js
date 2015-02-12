@@ -47,6 +47,8 @@ var closetPoints = function(arr, point, k) {
     
     // find k smallest number in array dists,
     // while the index of dists is the same with that in the given arr.
+    
+    // if Math.min.apply isn't allowed here, use a stack to record k smallest elements.
     while (pointCount < k && pointCount < arr.length) {
         minDist = Math.min.apply([], dists);
         minIndex = minHash[minDist].pop();
