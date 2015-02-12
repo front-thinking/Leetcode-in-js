@@ -43,11 +43,14 @@ var minWindow = function(pres, s) {
             // all found, check the length.
             
             // Telling the truth I can't understand what's the regexp used for after few months.
-            //~ if (matched.length == pres.length && !matched.join(",").match(/(^0,|,0,|,0$)/)) {
             if (matched.length == pres.length) {
                 newStart = Math.min.apply(Math, matched) - 1;
+                
+                // if matched is not fully filled, newStart would be NaN.
+                if (isNaN(newStart)) continue;
+                
                 newLen = Math.max.apply(Math, matched) - newStart - 1;
-                if (newLen <= minLen) {
+                if (newLen <= minLen && newLen >= pres.length) {
                     minLen = newLen;
                     minStart = newStart;
                 }
