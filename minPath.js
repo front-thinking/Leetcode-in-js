@@ -9,8 +9,8 @@ Give the length of the shortest path from M[0][0] to M[n-1][m-1]. You can move e
  *
  *** ideas
 
-Nothing much to tell, just do the move reculsively.
-Let me know if there exist any better solution.
+Nothing much to tell, just do the move recursively.
+I can understand it be a DP question however I did find the state without recursion.
 
  *
  */
