@@ -8,6 +8,17 @@
  However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  *
  *@see https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+ 
+ *** ideas:
+
+ we're greedy that we follow the rules below:
+ 1. Record the price at the first day;
+ 2. If the stock at the current day is having a lower price, record it as the "buyIndex" for purchase;
+    If the stock keeps decreasing, always record the last price for purchase;
+ 3. If the stock starts increase, say having a higher price than our las recorded index, record if as "sellIndex" and prepar to sell;
+    If the stock keeps increasing, always record the last price for selling;
+ 4. Once we've located the buyIndex and the sellIndex, if we find it decreasing again or reaching the end of the array, sell it and add it to our profit.
+ 
  */
 var maxProfit_2 = function(arr) {
     var buyIndex = 0,
