@@ -21,7 +21,7 @@ var maxProfit_3 = function(arr, k) {
         isBuying = 1;
     
     // keep using the method in maxProfit_2, record the benifit each time we make a purchase.
-    // find 2 max value from all recorded profits.
+    // then find K max value from all recorded profits.
     
     for (var i = 0, price; (price = arr[i]) !== undefined; ++i) {
         lastIndex = isBuying ? buyIndex : sellIndex;
