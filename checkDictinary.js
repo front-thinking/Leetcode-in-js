@@ -25,28 +25,17 @@ We're ignoring orders of the given string using regexp.
  */
 
 var checkDictionary = function(str, dictionary) {
-    var str = str.replace(/\W/ig, "");
+    var str = str.replace(/[^a-z]/ig, "");
     
     // Here we do not sort the dictionary. As it's could be easier if we find all matches and them pickup the shortest one.
-    
-    // Let's imagine there could be dulplicated letters in str, so we should take care of that.
-    var charHash = {},
-        newStr = [];
-    for (var i in str) {
-        if (!charHash[i]) {
-            charHash[i] = 1;
-            newStr.push(charHash[i]);
-        }
-    }
-    newStr = newStr.join("");
     
     // Here comes the magic.
     var matches = [],
         reg;
     for (var i in dictionary) {
         
-        reg = new RegExp("[" + dictionary[i].join("|") + "]{" + newStr.length + "}", "i");
-        if (newStr.match(reg)) {
+        reg = new RegExp("[" + dictionary[i].replace(/[^a-z]/ig, "").split("").join("|") + "]{" + str.length + "}", "i");
+        if (str.match(reg)) {
             matches.push(dictionary[i]);
         }
     }
