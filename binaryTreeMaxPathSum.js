@@ -2,7 +2,8 @@
 
 /**
  *
- *
+ *@see http://www.lintcode.com/en/problem/binary-tree-maximum-path-sum/
+ *@see https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
 Given a binary tree, find the maximum path sum.
 

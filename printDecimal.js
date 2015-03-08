@@ -1,7 +1,9 @@
 //@ sourceURL=binaryDecimal.js
 /**
  * PrintBinary of decimal.
- * Forgot where I foudn this question...
+ 
+ *@see http://www.lintcode.com/problem/binary-representation
+ 
  * For example given 6.25, return 110.01, including dots and the decimal part of the number.
  * For those that can't be parsed to ligel binary, return false.
  */
