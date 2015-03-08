@@ -106,3 +106,38 @@ node5.right = node6;
 node6.right = node_3;
 node_3.left = node4;
 console.log(binaryTreeMaxPathSum(node5));
+
+// test case 3
+var node1 = {
+    value : 1
+},node2 = {
+    value : -2
+},node3 = {
+    value : -3
+},node4 = {
+    value : 1
+},node5 = {
+    value : 3
+},node6 = {
+    value : -2
+},node7 = {
+    value : -1
+};
+
+node1.left = node2;
+node1.right = node3;
+node2.left = node4;
+node2.right = node5;
+node3.left = node6;
+node4.left = node7;
+console.log(binaryTreeMaxPathSum(node1));
+
+/*
+           1
+       /      \
+     -2       -3
+     / \      /
+    1   3   -2
+   /
+ -1
+*/
