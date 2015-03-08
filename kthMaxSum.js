@@ -44,6 +44,8 @@ var kthMaxSum = function(arr1, arr2, k) {
         p1 = bufPair[0];
         p2 = bufPair[1];
         
+        // XXXXXX should the poped pairs be stored in the non-dulp hash as well?
+        // Maybe.
         existPair[p1 + "_" + p2] = false;
         ++counter;
         
