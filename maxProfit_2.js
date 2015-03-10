@@ -48,6 +48,7 @@ var maxProfit_2 = function(arr) {
         // sell for the last time if still not sold when finished scanning.
         if (!arr[i + 1] && !isBuying) {
             profit += arr[sellIndex] - arr[buyIndex];
+            isBuying = 1;
         }
     }
     return profit;

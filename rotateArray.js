@@ -37,7 +37,7 @@ var rotateArray = function(arr, k) {
             --end;
         }
     }
-    
+    k = k % arr.length;
     arr.reverse();
     subReverse(arr, 0, k - 1);
     subReverse(arr, k, arr.length - 1);

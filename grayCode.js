@@ -44,3 +44,5 @@ var grayCode = function (n) {
     return ret;
 }
  */
+
+// Faild.

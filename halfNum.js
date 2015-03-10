@@ -1,6 +1,7 @@
 //@ sourceURL=halfNum.js
 /**
  * @see http://blog.csdn.net/liu1064782986/article/details/7411720
+ * @see https://leetcode.com/problems/majority-element/
  * @desription Find a number which appeared in an array for more than the half of its number count.
  *  Drop those unequal pares in each comparation.
  */

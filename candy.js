@@ -35,6 +35,8 @@ What is the minimum candies you must give?
  *
  */
 
+// Failed this: [5,1,1,1,10,2,1,1,1,3]
+
 var candy = function(arr) {
     
     // scan the array. Let's assume the first child need 1 candy only.
@@ -67,7 +69,6 @@ var candy = function(arr) {
         
         // just give 1 candy for those at the middle of some nabours that's having the same rate.
         lastRate = arr[i];
-        console.log(lastCandy);
         candies += lastCandy;
     }
     

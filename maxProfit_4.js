@@ -13,7 +13,7 @@ You may not engage in multiple transactions at the same time (ie, you must sell 
  *
  *@see https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
  */
-var maxProfit_3 = function(arr, k) {
+var maxProfit = function(k, arr) {
     var buyIndex = 0,
         sellIndex = 0,
         lastIndex = 0,
@@ -45,6 +45,7 @@ var maxProfit_3 = function(arr, k) {
         // sell for the last time if still not sold when finished scanning.
         if (!arr[i + 1] && !isBuying) {
             profits.push(arr[sellIndex] - arr[buyIndex]);
+            isBuying = 1;
         }
     }
     
@@ -58,12 +59,12 @@ var maxProfit_3 = function(arr, k) {
         profit,
         maxCount = 0;
     
-    for (var i in profits) {
+    for (var i = 0; i < profits.length; ++i) {
         while ((profit = profits[i]) > maxStack[maxStack.length - 1]) {
             bufStack.push(maxStack.pop());
         }
         maxStack.push(profit);
-        while (bufStack.length && maxCount < k - 1) {
+        while (bufStack.length && maxCount + maxStack.length < k) {
             maxStack.push(bufStack.pop());
             ++maxCount;
         }
@@ -72,7 +73,7 @@ var maxProfit_3 = function(arr, k) {
     }
     
     profit = 0;
-    for (var i in maxStack) {
+    for (var i = 0; i < maxStack.length; ++i) {
         profit += maxStack[i];
     }
     

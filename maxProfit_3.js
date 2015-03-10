@@ -41,6 +41,7 @@ var maxProfit_3 = function(arr) {
         // sell for the last time if still not sold when finished scanning.
         if (!arr[i + 1] && !isBuying) {
             profits.push(arr[sellIndex] - arr[buyIndex]);
+            isBuying = 1;
         }
     }
     
